@@ -1,0 +1,50 @@
+Excel to DokuWiki converter
+---------------------------
+
+type       : Conversion Tool 
+version    : Excel2Dokuwiki_v4-02.xlsm 
+info       : For easy and complex table conversion into DokuWiki Syntax. 
+lastupdate : 2011-05-13 
+author     : Taggic 
+depends    : DW plugin tablewidth maybe used 
+conflicts  :
+tags       : Excel, Conversion, Syntax 
+
+
+Intro
+---------------------------
+
+Based on an initial post at DokuWiki I've developed a lot of further enhancements. Meanwhile the code 
+was also published on DW homepage. Howevere here you find the tool itself making all easier You may want 
+to contact me in the event of questions or ask for further improvements.
+ 
+The tool contains parameters on first worksheet to allow the user some customization. 
+Paste your table into another worksheet, select the cells as usual and run the makro.
+
+
+Description
+---------------------------
+Parameter effects in DokuWiki:
+  - defines if Bold, Italic, Undeline will be considered (little bug fix)
+  - use same horizontal cell alignment (left, center, right)
+  - text will be colored as in Excel
+  - cell color will be used as text background color (do not mixed up with cell color at the wiki)
+  - colors the background first row light blue 
+  - colors the background first column light blue 
+  - display the hyperlink only by its real link address (no: use cell text as caption and put the link behind)
+  - cell comments will be inserted as footnotes
+  - table and columns will be defined in their width (tablewidth plugin needed at DW)
+ 
+Beside that the detection of merged cells is now corrected.
+
+ 
+Consider:
+---------------------------
+A German excel version is throwing errors caused by “ThisWorkbook.Sel2Wiki” due to a string is handed over and no function is used. But my Excel understands following:
+ 
+myButton.OnAction = "DieseArbeitsmappe.Sel2Wiki"
+ 
+Therfore I changed the AddIn Button providing now two buttons to overcome the language dependency. If you have a German Excel then use the (German) button or the other if your Excel is an English version. Everybody who knows how to get rid of this is invited to share the solution here and I will implement it asap.
+ 
+PS:
+ There are other methods provided by MS Excel to run a macro, not that comfortable but working independently of the language. Use those if you have neither German nor English version. 
